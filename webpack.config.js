@@ -1,5 +1,4 @@
 const path = require('path')
-var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 module.exports = {
   entry: './client/index.js',
@@ -15,9 +14,6 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
-  plugins: [
-    new FriendlyErrorsWebpackPlugin(),
-  ],
   resolve: {
     extensions: ['.js', '.jsx']
   },
