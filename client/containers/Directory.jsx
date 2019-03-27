@@ -2,12 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import {getLocationById} from '../api/local/locations'
-import {getLocationsByParent} from '../api/local/locations'
-import {getParentByCurrent} from '../api/local/locations'
-import {getChildrenByParent} from '../api/local/locations'
-import {updateCurrentLocation} from '../actions/locations'
-import {sendNewLocation} from '../api/local/locations'
+import {getLocationById, getLocationsByParent, getParentByCurrent, getChildrenByParent, sendNewLocation} from '../api/local/locations'
 
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -17,14 +12,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
 import UpIcon from '@material-ui/icons/KeyboardArrowUp'
-import { isIterable } from 'core-js';
 
 const styles = theme => ({
   root: {
