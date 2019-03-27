@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Teko:700');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'Roboto', sans-serif;
+  }
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.app-container {
+  display: grid;
+  min-height: 100%;
+  width: 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  grid-template-columns: 100%;
+  grid-template-rows: auto, 1fr, auto;
+}
+
+.header-container {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.body {
+  display: grid;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-height: calc(100vh - 100px);
+  background-color: #979b9ace;
+}
+
+/* --  header --  */
+.header {
+  height: 50px;
+  display: flex;
+  flex:start;
+  justify-content: space-around;
+
+  font-family: 'Roboto', sans-serif;
+
+  font-weight: bold;
+  font-size: 5vh;
+  background-color: rgb(249,249,249);
+  align-items: center;
+  -webkit-box-shadow: 0px 2px 18px -3px rgba(0,0,0,0.67);
+  -moz-box-shadow: 0px 2px 18px -3px rgba(0,0,0,0.67);
+  box-shadow: 0px 2px 18px -3px rgba(0,0,0,0.67);
+}
+
+.header ul {
+  list-style-type: none;
+  list-style: none;
+  height: 100%;
+  text-align: center;
+  padding:0;
+  margin:0;
+  overflow: hidden;
+}
+
+.header li {
+  float: left;
+  line-height: 150%;
+}
+
+.header a {
+  display: block;
+  text-decoration: none;
+  color: #353839;
+}
+
+.header a.active {
+  display: block;
+  text-decoration: none;
+  color: #353839;
+}
+
+.header-items {
+  width: 15vw;
+  text-align: center;
+  height: 100%;
+  background-color: rgb(148,169,178);
+  color: #353839;
+}
+
+.header-items:hover {
+  color: #272b2e;
+}
+
+/* -- -- Footer -- --  */
+
+.footer {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  position: sticky;
+  height: 50px;
+
+  color: #d4d4d5;
+  background-color: #98999a;
+  /* margin-top: -50px; */
+}
+
+/* -- footer 'The Gear Report' -- */
+.footer-middle-inner p {
+  font-family: 'Teko', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+
+  background-color: #565656;
+  color: transparent;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.137);
+  -webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
+}
+
+/* -- footer Donate & FAQ -- */
+.footer-right {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8em;
+  font-weight:bold;
+  color: #abbfd3;
+  line-height: 180%;
+}
+
+.footer-right ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+.footer-right a {
+  position: relative;
+  text-decoration: none;
+  color: #272b2e;
+}
+
+/* -- footer on hover transitions -- */
+.footer a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #272b2e;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.footer-right a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* -- dashboard -- */
+.dashboard-container {
+  display: grid;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  grid-template-columns: auto 3fr;
+  grid-template-rows: repeat(3, 1fr);
+  height: auto;
+}
+
+.dashboard {
+  display: grid;
+  grid-column: 4 / 12;
+  grid-row: 1 / 15;
+  /* height: 80vh; */
+}
+
+.directory {
+  grid-column: 1 / 2;
+  grid-row: 1 / 5;
+  height: 100%;
+  position: sticky;
+  max-width: 360px !important;
+  /* Potential to make position sticky to keep at top */
+}
+
+.globe {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.globeContainer {
+  height: 450px;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.globeContainer div:first-child {
+  position: relative !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.topRecentTi {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.topContribs {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.add-ticket-container {
+  max-height: 87vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.formHeading {
+  margin-bottom: 5px;
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.create-ticket{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  padding-left: 15px;
+}
+
+.cards-header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5em;
+  background-color: #272b2e;
+  color: white;
+  -webkit-box-shadow: 0px 2px 18px -3px rgba(0,0,0,0.67);
+-moz-box-shadow: 0px 2px 18px -3px rgba(0,0,0,0.67);
+box-shadow: 0px 2px 18px -3px rgba(0,0,0,0.67);
+}
+
+.mediacard-width{
+  margin: 1em;
+  width: 40%;
+  max-width: 200px;
+  min-width: 150px;
+  max-height: 250px;
+  min-height: 200px
+}
+
+.flex-cards{
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.grid-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding:2%; */
+}
+
+.child {
+  grid-column: 2 / 3;
+}
+
+.ticketComponent {
+  padding: 20px;
+}
+.ticketInfoCard {
+  min-width: 230px;
+  max-width: 350px;
+}
+
+.actionStack {
+  float: right;
+  align-self: flex-end;
+}
+
+.action-stack {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tickets-container{
+  display: grid;
+  /* justify-items: center; */
+  grid-template-columns: 10%, 80%, 10%;
+  height: 100%;
+}
+
+.tickets-container div:first-child {
+  grid-column: 2 / 3;
+}
+
+.action-button{
+  margin: 0.5em;
+}
+
+.add-button{
+  align-self: flex-end;
+  margin: 1em;
+}
+
+.add-button-allTickets {
+  width: 56px !important;
+  grid-column: 3 / 4;
+  justify-self: flex-end;
+  position: relative;
+}
+
+.ticketFlexContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-ticket-link{
+  list-style-type: none;
+  text-decoration: none;
+  border: none;
+}
+
+.info-container{
+  padding:5%;
+  display: flex;
+  justify-content: center;
+}
+
+.info{
+  background-color: rgb(249,249,249);
+  border-radius: 5px;
+  padding: 2%;
+  max-width: 500px;
+  -webkit-box-shadow: 0px 1px 18px -3px rgba(0,0,0,0.67);
+  -moz-box-shadow: 0px 1px 18px -3px rgba(0,0,0,0.67);
+  box-shadow: 0px 1px 18px -3px rgba(0,0,0,0.67);
+}
+
+.justify-text{
+  text-justify: inter-word;
+}
+
+@media screen and (max-width: 480px) {
+  .ticketFlexContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  .action-stack {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+}
