@@ -1,6 +1,8 @@
 import React from 'react'
-import {Button, Menu, MenuItem} from '@material-ui/core';
 import { Link } from 'react-router-dom'
+
+import {Button, Menu, MenuItem} from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
 
 class SignedInLinks extends React.Component {
   constructor(props) {
@@ -72,6 +74,7 @@ class SignedInLinks extends React.Component {
           </Button>
           {/* <img src={isLoggedIn.user.picture}/> */}
         </div>
+        <Avatar>RG</Avatar>
 
       </React.Fragment>
     )
