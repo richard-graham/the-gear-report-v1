@@ -23,6 +23,7 @@ export class TopRecentTi extends React.Component {
             {this.props.ticketsByLocation.slice(0, 5).map((ticket, i) => {
               return (
                 <MediaCard 
+                key={i}
                 classKey={`topRecentTi${i}`} 
                 title={ticket.title} 
                 description={ticket.description} 
