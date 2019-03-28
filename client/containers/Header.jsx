@@ -88,9 +88,14 @@ export class Header extends Component {
               <img src={isLoggedIn.user.picture}/>
             </div>
           ) : 
+          <React.Fragment>
             <Button color="inherit" onClick={this.handleLogin}>
               Login
             </Button>
+            <Button color="inherit" onClick={this.handleLogin}>
+            Sign Up
+          </Button>
+          </React.Fragment>
           }
       </div>
     )
