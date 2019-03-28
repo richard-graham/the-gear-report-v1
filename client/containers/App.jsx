@@ -11,6 +11,7 @@ import Footer from '../components/Footer'
 import AddTicket from './AddTicket'
 import EditTicket from './EditTicket'
 import SignIn from '../containers/auth/SignIn'
+import SignUp from '../containers/auth/SignUp'
 
 import Navbar from './layout/Navbar'
 
@@ -27,6 +28,7 @@ export default function App() {
 						<Route path='/login' component={Login} />
 						<Route path='/register' component={Register} />
 						<Route path='/signin' component={SignIn} />
+						<Route path='/signup' component={SignUp} />
 						
 						<Route exact path='/tickets/ticketId/:ticketId' component={Ticket} />
 						<Route exact path='/tickets/add' component={AddTicket} />
