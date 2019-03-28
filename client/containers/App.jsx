@@ -10,6 +10,7 @@ import AllTickets from './AllTickets'
 import Footer from '../components/Footer'
 import AddTicket from './AddTicket'
 import EditTicket from './EditTicket'
+import SignIn from '../containers/auth/SignIn'
 
 import Navbar from './layout/Navbar'
 
@@ -22,8 +23,10 @@ export default function App() {
 					<div className="body">
 						<Route exact path='/' render={() => (<Redirect to="/dashboard/104"/>)} />
 						<Route exact path='/dashboard/:id' component={Dashboard} />
+
 						<Route path='/login' component={Login} />
 						<Route path='/register' component={Register} />
+						<Route path='/signin' component={SignIn} />
 						
 						<Route exact path='/tickets/ticketId/:ticketId' component={Ticket} />
 						<Route exact path='/tickets/add' component={AddTicket} />
