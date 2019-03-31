@@ -3,6 +3,7 @@ import {combineReducers} from 'redux'
 import {currentTicket, dropdownArr, allTickets, ticketLocations, ticketCreator, ticketsByLocation, topContributors} from './tickets'
 import { updateCurrentLocation, updateLocationsByParent, loadLocationById, loadParentByCurrent, loadChildrenByParent } from './location'
 import isLoggedIn from './login'
+import { firebaseReducer } from 'react-redux-firebase'
 
 export default combineReducers({
   currentTicket,
@@ -17,6 +18,7 @@ export default combineReducers({
   loadChildrenByParent,
   ticketCreator,
   ticketsByLocation,
-  topContributors
+  topContributors,
+  firebase: firebaseReducer, 
 })
 
