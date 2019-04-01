@@ -26,6 +26,7 @@ class SignedInLinks extends React.Component {
   render() {
     const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
+    console.log(this.props);
     return (
       <React.Fragment>
         <Button 
@@ -77,7 +78,7 @@ class SignedInLinks extends React.Component {
           </Button>
           {/* <img src={isLoggedIn.user.picture}/> */}
         </div>
-        <Avatar>RG</Avatar>
+        <Avatar>{this.props.profile.initials}</Avatar>
 
       </React.Fragment>
     )
