@@ -70,7 +70,7 @@ class SignedOutLinks extends React.Component {
           {/* <img src={isLoggedIn.user.picture}/> */}
         </Link>
         
-        <Link to='/register' className="header-items-login">
+        <Link to='/signup' className="header-items-login">
           <Button color="inherit" 
           // onClick={this.handleLogout}
           >

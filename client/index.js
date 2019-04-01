@@ -15,15 +15,16 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducers, composeEnhancers(
   applyMiddleware(thunkMiddleware.withExtraArgument({ getFirebase, getFirestore })),
   reduxFirestore(fbConfig),
-  reactReduxFirebase(fbConfig)
+  reactReduxFirebase(fbConfig, { attachAuthIsReady: true })
 ))
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.getElementById('app')
-  )
+store.firebaseAuthIsReady.then(() => { // won't render DOM until auth has been checked
+    ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+      document.getElementById('app')
+    )
 })
+
+
