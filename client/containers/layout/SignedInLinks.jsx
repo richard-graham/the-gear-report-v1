@@ -1,5 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux' 
+import { signOut } from '../../actions/authActions'
+
 
 import {Button, Menu, MenuItem} from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
@@ -68,7 +70,7 @@ class SignedInLinks extends React.Component {
 
         <div className="header-items-login">
           <Button color="inherit" 
-          // onClick={this.handleLogout}
+          onClick={this.props.signOut}
           >
             Logout
           </Button>
@@ -81,4 +83,10 @@ class SignedInLinks extends React.Component {
   }
 }
 
-export default SignedInLinks
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => dispatch(signOut())
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SignedInLinks)
