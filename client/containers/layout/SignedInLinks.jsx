@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux' 
 import { signOut } from '../../actions/authActions'
+import { Link } from 'react-router-dom'
 
 
 import {Button, Menu, MenuItem} from '@material-ui/core';
@@ -51,17 +52,17 @@ class SignedInLinks extends React.Component {
           onClose={this.handleClose}
           >
 
-          <a className='menu-ticket-link' href="/tickets">
+          <Link className='menu-ticket-link' to="/tickets">
             <MenuItem 
             onClick={this.handleClose}
             > View tickets </MenuItem>
-          </a>
+          </Link>
 
-          <a className='menu-ticket-link' href="/tickets/add">
+          <Link className='menu-ticket-link' to="/tickets/add">
             <MenuItem 
             onClick={this.handleClose}
             > Add ticket </MenuItem>
-          </a>
+          </Link>
         </Menu>
 
         <a href="https://kwf.co.nz/">

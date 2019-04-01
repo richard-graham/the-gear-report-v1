@@ -49,11 +49,11 @@ class SignedOutLinks extends React.Component {
           onClose={this.handleClose}
           >
 
-          <a className='menu-ticket-link' href="/tickets">
+          <Link className='menu-ticket-link' to="/tickets">
             <MenuItem 
             onClick={this.handleClose}
             > View tickets </MenuItem>
-          </a>
+          </Link>
 
         </Menu>
 
@@ -61,23 +61,23 @@ class SignedOutLinks extends React.Component {
           <Button color="inherit"> About </Button>
         </a>
 
-        <div className="header-items-login">
+        <Link to='/signin' className="header-items-login">
           <Button color="inherit" 
           // onClick={this.handleLogout}
           >
             Login
           </Button>
           {/* <img src={isLoggedIn.user.picture}/> */}
-        </div>
+        </Link>
         
-        <div className="header-items-login">
+        <Link to='/register' className="header-items-login">
           <Button color="inherit" 
           // onClick={this.handleLogout}
           >
             Register
           </Button>
           {/* <img src={isLoggedIn.user.picture}/> */}
-        </div>
+        </Link>
 
       </React.Fragment>
     )
