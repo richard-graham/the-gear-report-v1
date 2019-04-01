@@ -15,7 +15,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducers, composeEnhancers(
   applyMiddleware(thunkMiddleware.withExtraArgument({ getFirebase, getFirestore })),
   reduxFirestore(fbConfig),
-  reactReduxFirebase(fbConfig, { attachAuthIsReady: true })
+  reactReduxFirebase(fbConfig, { useFirestoreForProfile: true, userProfile: 'users', attachAuthIsReady: true }) // adds user data from the users table to the firestore.profile in state
 ))
 
 store.firebaseAuthIsReady.then(() => { // won't render DOM until auth has been checked
