@@ -4,6 +4,7 @@ import {currentTicket, dropdownArr, allTickets, ticketLocations, ticketCreator, 
 import { updateCurrentLocation, updateLocationsByParent, loadLocationById, loadParentByCurrent, loadChildrenByParent } from './location'
 import isLoggedIn from './login'
 import { firebaseReducer } from 'react-redux-firebase'
+import authReducer from './authReducer'
 
 export default combineReducers({
   currentTicket,
@@ -20,5 +21,6 @@ export default combineReducers({
   ticketsByLocation,
   topContributors,
   firebase: firebaseReducer, 
+  auth: authReducer
 })
 

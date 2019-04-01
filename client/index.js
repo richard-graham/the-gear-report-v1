@@ -3,18 +3,19 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux'
 import thunkMiddleware from 'redux-thunk'
-
+import { reduxFirestore, getFirestore } from 'redux-firestore'
+import { reactReduxFirebase, getFirebase } from 'react-redux-firebase'
+import fbConfig from './config/fbConfig'
 
 import App from './containers/App'
 import reducers from './reducers';
 
-// Sets initial state OMG so long as passed in as second arg of createStore
-const initialState = {
-}
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-const store = createStore(reducers, initialState, composeEnhancers(
-  applyMiddleware(thunkMiddleware)
+
+const store = createStore(reducers, composeEnhancers(
+  applyMiddleware(thunkMiddleware.withExtraArgument({ getFirebase, getFirestore })),
+  reduxFirestore(fbConfig),
+  reactReduxFirebase(fbConfig)
 ))
 
 

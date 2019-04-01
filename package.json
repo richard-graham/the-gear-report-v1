@@ -54,6 +54,7 @@
     "react-social-login": "^3.4.4",
     "react-social-login-buttons": "^2.3.0",
     "redux": "^4.0.1",
+    "redux-firestore": "^0.7.2",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0",
     "sqlite3": "^4.0.6",

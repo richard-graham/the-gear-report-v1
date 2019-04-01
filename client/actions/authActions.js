@@ -1,10 +1,8 @@
-import { getFirebase } from "react-redux-firebase";
-
 export const signIn = (creds) => {
-  return (dispatch, getState, { getFIrebase }) => {
+  return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase()
 
-    firebase.auth().signInWithUserNameAndPassword(
+    firebase.auth().signInWithEmailAndPassword(
       creds.email,
       creds.password
     ).then(() => {
@@ -12,5 +10,6 @@ export const signIn = (creds) => {
     }).catch((err) => {
       dispatch({ type: 'LOGIN_ERROR', err })
     })
+    
   }
-} 
+}
