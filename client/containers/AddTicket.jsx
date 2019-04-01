@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
 import {TextField, MenuItem, Button, FormControl, Paper} from '@material-ui/core';
+import { Redirect } from 'react-router-dom'
 
 import {islandRanges, severityRanges } from '../helper-functions/addTickets'
 import { addTicket, getFirstByParent, getSecondByParent, getThirdByParent, getFourthByParent, getFifthByParent } from '../api/local/form'
@@ -66,7 +67,8 @@ export class AddTicket extends Component {
   };
 
   render() {
-    const { dropdownArr } = this.props
+    const { dropdownArr, auth } = this.props
+    if (!auth.uid) return <Redirect to='/signin' />
     return (
       <div className='content add-ticket-container'>
         <form onSubmit={this.handleSumbit} className='info'>
@@ -222,8 +224,13 @@ export class AddTicket extends Component {
   }
 }
 
-function mapStateToProps({ user, dropdownArr, isLoggedIn }){
-  return { user, dropdownArr, isLoggedIn }
+function mapStateToProps(state, { user, dropdownArr, isLoggedIn }){
+  return { 
+    user, 
+    dropdownArr, 
+    isLoggedIn,
+    auth: state.firebase.auth
+  }
 }
 
 function mapDispatchToProps( dispatch ){
